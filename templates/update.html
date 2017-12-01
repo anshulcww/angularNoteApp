@@ -1,0 +1,24 @@
+<div class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="container">
+    <table class="f6 w-100 mw8 center" cellspacing="0">
+      <thead>
+        <tr class="stripe-dark" >
+          <th class="fw6 tl pa3 bg-white">Country</th>
+          <th class="fw6 tl pa3 bg-white">State</th>
+          <th class="fw6 tl pa3 bg-white">Comment</th>
+          <th class="fw6 tl pa3 bg-white">Edit</th>
+        </tr>
+      </thead>
+      <tbody class="lh-copy" >
+        <tr class="stripe-dark" ng-repeat="upd in updatedValue track by $index" >
+          <td class="pa3">{{upd.selectedCountry}}</td>
+          <td class="pa3">{{upd.selectedState}}</td>
+          <td class="pa3">{{upd.selectedText}}</td>
+          <td class="pa3"><input type="text" name="comment" value="{{upd.selectedText}}" ng-disabled="selectedIndex!==$index" ng-model="newText[$index]" value="newText[$index]">
+  {{newText[$index]}}
+          </td>
+          <td class="pa3"><a href="#" ng-click="update($index)">update</a>/<a href="#" ng-click="save($index)">save</a></td>
+        </tr>
+      </tbody>
+    </table>
+    
+</div>
